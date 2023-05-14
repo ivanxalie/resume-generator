@@ -1,0 +1,18 @@
+icons_path: C:\Users\alex-pc\Desktop\JavaLearn\resume-generator\src\main\resources\icons
+template:
+  location: classpath:template-transformer.xslt
+  icons:
+    - name: gmail
+      link: ${icons_path}\gmail.png
+    - name: phone
+      link: ${icons_path}\phone.png
+    - name: linkedin
+      link: ${icons_path}\linkedin.svg
+    - name: skype
+      link: ${icons_path}\skype.png
+    - name: telegram
+      link: ${icons_path}\telegram.png
+    - name: whatsapp
+      link: ${icons_path}\whatsapp.png
+    - name: github
+      link: ${icons_path}\github.png

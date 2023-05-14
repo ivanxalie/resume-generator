@@ -1,0 +1,6 @@
+test:
+  acrobat:
+    path: C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat
+  resume:
+    data:
+      path: C:\Users\alex-pc\Documents\data-example.json
