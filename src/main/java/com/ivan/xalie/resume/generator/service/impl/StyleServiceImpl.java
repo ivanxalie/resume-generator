@@ -123,6 +123,12 @@ public class StyleServiceImpl implements StyleService {
                 line-height: 1.5;
                 text-indent: 1em;
             }
+                        
+            .language {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
             """;
 
 

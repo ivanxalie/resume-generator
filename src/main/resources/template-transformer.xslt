@@ -67,6 +67,20 @@
                         </xsl:for-each>
                     </div>
                 </xsl:if>
+
+                <xsl:variable name="languages" select="resume/languages"/>
+                <xsl:if test="$languages">
+                    <div class="language">
+                        <ul>
+                            <xsl:for-each select="$languages/language">
+                                <li>
+                                    <xsl:value-of select="./name"/> -
+                                    <xsl:value-of select="./grade"/>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </div>
+                </xsl:if>
             </body>
         </html>
     </xsl:template>
