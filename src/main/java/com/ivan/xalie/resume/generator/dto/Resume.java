@@ -20,6 +20,7 @@ import java.util.List;
         "professionalSummary",
         "languages",
         "workExperience",
+        "projects",
         "education",
         "skills",
         "certifications",
@@ -30,7 +31,6 @@ import java.util.List;
 public class Resume {
 
     @JsonProperty
-
     private String name;
 
     @JsonProperty("position_title")
@@ -50,6 +50,10 @@ public class Resume {
     @JsonProperty("work_experience")
     @Getter(onMethod_ = {@XmlElementWrapper(name = "workExperience"), @XmlElement(name = "job")})
     private List<WorkExperience> workExperience;
+
+    @JsonProperty("projects")
+    @Getter(onMethod_ = {@XmlElementWrapper(name = "projects"), @XmlElement(name = "project")})
+    private List<Project> projects;
 
     @JsonProperty("education")
     @Getter(onMethod_ = {@XmlElementWrapper(name = "education"), @XmlElement(name = "degree")})

@@ -8,11 +8,10 @@ import java.util.List;
 public class StyleServiceImpl implements StyleService {
     public static final String DEFAULT = """
             html {
-                font-size: 15px;
+                font-size: 14px;
             }
                                     
             body {
-                background-color: rgba(240, 255, 255, 0.5);
                 border: 1px solid rgba(0, 0, 255, 0.3);
                 border-radius: 10px;
                 margin: 2px;
@@ -67,15 +66,10 @@ public class StyleServiceImpl implements StyleService {
                 letter-spacing: normal;
             }
                                     
-            .accomplishments-duties {
-                font-size: 0;
-                letter-spacing: -0.31em;
-            }
-                                    
             .accomplishments-duties div {
-                display: inline-block;
+                display: inline-flex;
                 vertical-align: top;
-                width: 45%;
+                width: 100%;
                 box-sizing: border-box;
                 padding: 5px;
                 font-size: 13px;
@@ -85,6 +79,11 @@ public class StyleServiceImpl implements StyleService {
             .education .university-name {
                 font-size: 0;
                 letter-spacing: -0.31em;
+                margin-top: 50px;
+            }
+             
+            .education {
+                margin-bottom: 30px;
             }
                                     
             .education .university-name div {
@@ -123,11 +122,14 @@ public class StyleServiceImpl implements StyleService {
                 line-height: 1.5;
                 text-indent: 1em;
             }
+                      
+            .projects {
+                margin-bottom: 30px;
+            }
                         
             .language {
-              position: absolute;
-              top: 0;
-              right: 0;
+              position: block;
+              align: center;
             }
             """;
 

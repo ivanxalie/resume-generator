@@ -17,6 +17,7 @@
                 <h2 class="position-title center">
                     <xsl:value-of select="resume/positionTitle"/>
                 </h2>
+
                 <xsl:variable name="contact_info" select="resume/contactInformation"/>
                 <xsl:if test="$contact_info">
                     <div class="contacts">
@@ -25,6 +26,7 @@
                         </div>
                     </div>
                 </xsl:if>
+
                 <xsl:variable name="summary" select="resume/professionalSummary"/>
                 <xsl:if test="$summary">
                     <div class="professional-summary">
@@ -36,10 +38,11 @@
                         </div>
                     </div>
                 </xsl:if>
+
                 <xsl:variable name="skills" select="resume/skills"/>
                 <xsl:if test="$skills">
                     <div class="skills">
-                        <h2 class="center">SKILLS</h2>
+                        <h2 class="center">Technical Skills</h2>
                         <ul>
                             <xsl:for-each select="$skills/skill">
                                 <li>
@@ -49,6 +52,7 @@
                         </ul>
                     </div>
                 </xsl:if>
+
                 <xsl:variable name="workExperience" select="resume/workExperience"/>
                 <xsl:if test="$workExperience">
                     <div class="work-experience">
@@ -58,6 +62,17 @@
                         </xsl:for-each>
                     </div>
                 </xsl:if>
+
+                <xsl:variable name="projects" select="resume/projects"/>
+                <xsl:if test="$projects">
+                    <div class="projects">
+                        <h2 class="center">PROJECTS</h2>
+                        <xsl:for-each select="$projects/project">
+                            <xsl:apply-templates select="."/>
+                        </xsl:for-each>
+                    </div>
+                </xsl:if>
+                
                 <xsl:variable name="education" select="resume/education"/>
                 <xsl:if test="$education">
                     <div class="education">
@@ -71,6 +86,7 @@
                 <xsl:variable name="languages" select="resume/languages"/>
                 <xsl:if test="$languages">
                     <div class="language">
+                        <h2 class="center">LANGUAGES</h2>
                         <ul>
                             <xsl:for-each select="$languages/language">
                                 <li>
@@ -109,6 +125,14 @@
                         </xsl:attribute>
                     </img>
                 </a>
+            </xsl:when>
+            <xsl:when test="@xsi:type = 'keyValue'">
+                <strong>
+                    <xsl:value-of select="key"/>
+                </strong>
+                :
+                <xsl:value-of select="value"/>
+                <br/>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
@@ -174,6 +198,26 @@
                     <xsl:value-of select="name"/>
                 </h3>
             </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="project">
+        <div>
+            <h2 class="center">
+                <xsl:value-of select="name"/>
+            </h2>
+            <div class="summary">
+                <p>
+                    <xsl:value-of select="context"/>
+                </p>
+            </div>
+            <ul>
+                <xsl:for-each select="steps">
+                    <li>
+                        <xsl:value-of select="."/>
+                    </li>
+                </xsl:for-each>
+            </ul>
         </div>
     </xsl:template>
 
